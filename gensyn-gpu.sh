@@ -53,4 +53,4 @@ cd rl-swarm || exit 1
 
 # 🐳 Launch GPU node directly
 echo "⚡ Launching Gensyn GPU container..."
-docker compose run --rm --build -Pit swarm-gpu
+docker compose run --rm --build -it swarm-gpu
