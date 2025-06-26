@@ -126,6 +126,22 @@ Errors (if any)
 
 🧼 Cleanup Tips
 
+🧹 How to Delete Gensyn Files Only
+To remove everything related to Gensyn (containers, repo folder, backups):
+# 1. Stop any running containers (optional but safe)
+```
+docker ps
+```
+check for the container id and replace
+```
+docker stop <container_id>
+```
+# 2. Remove the RL Swarm repo and backup
+```
+rm -rf ~/gensyn-oneclick/rl-swarm
+rm -rf ~/gensyn-oneclick/backup
+```
+This would remove everything in docker(not advice able)
 To remove all Docker containers, images, and cache:
 ```
 sudo docker container prune -f
