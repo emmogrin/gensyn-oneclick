@@ -75,6 +75,7 @@ This gives you a public URL like:
 https://loose-cats-tickle.loca.lt
 
 Paste that link in your browser to complete sign-in.
+(your vps ip is your Tunnel password)
 
 
 ---
