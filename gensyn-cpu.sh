@@ -37,7 +37,7 @@ node -v
 
 echo "📦 Fixing yarn install (npm EEXIST)..."
 sudo rm -f /usr/bin/yarn /usr/bin/yarnpkg
-npm install -g yarn --force
+sudo npm install -g yarn --force
 
 echo "🧵 Installing Yarn (alt path)..."
 curl -o- -L https://yarnpkg.com/install.sh | bash
