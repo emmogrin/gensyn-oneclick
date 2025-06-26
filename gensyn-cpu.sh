@@ -51,6 +51,6 @@ fi
 
 cd rl-swarm || exit 1
 
-# 🐳 Launch in screen
-echo "🖥️  Starting CPU node in screen session 'swarm'..."
-screen -S swarm bash -c "docker compose run --rm --build -Pit swarm-cpu"
+# 🐳 Run container directly
+echo "🚀 Launching Gensyn CPU container..."
+docker compose run --rm --build -Pit swarm-cpu
