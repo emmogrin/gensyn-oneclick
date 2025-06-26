@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# 🌟 Colors
+# 🌿 Colors
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-# 🌟 Glorious Saint Khen Banner
+# 🌟 SAINT KHEN BANNER
 echo -e "${GREEN}"
 cat << "EOF"
 ███████╗ █████╗ ██╗███╗   ██╗████████╗    ██╗  ██╗██╗  ██╗███████╗███╗   ██╗
@@ -19,16 +19,38 @@ cat << "EOF"
 EOF
 echo -e "${NC}"
 
-# 🔧 Clone Gensyn repo
+echo "📦 Updating packages..."
+sudo apt update && sudo apt upgrade -y
+
+echo "🛠 Installing essential tools and dependencies..."
+sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano \
+automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev \
+tar clang bsdmainutils ncdu unzip -y
+
+echo "🐍 Installing Python..."
+sudo apt install python3 python3-pip python3-venv python3-dev -y
+
+echo "🌐 Installing Node.js 22..."
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
+sudo apt install -y nodejs
+node -v
+npm install -g yarn
+
+echo "🧵 Installing Yarn (alt path)..."
+curl -o- -L https://yarnpkg.com/install.sh | bash
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+source ~/.bashrc
+
+# 🔧 Clone RL-Swarm
 if [ ! -d "rl-swarm" ]; then
-  echo "📥 Cloning Gensyn RL-Swarm..."
+  echo "📥 Cloning Gensyn RL-Swarm repo..."
   git clone https://github.com/gensyn-ai/rl-swarm.git
 else
-  echo "📁 Gensyn repo already exists. Skipping clone."
+  echo "📁 RL-Swarm already exists, skipping clone."
 fi
 
 cd rl-swarm || exit 1
 
-# 🐳 Run CPU container (build if needed)
-echo "🚀 Launching Gensyn CPU node..."
+# 🐳 Launch Gensyn CPU node
+echo "🚀 Launching Gensyn CPU container..."
 docker compose run --rm --build -Pit swarm-cpu
