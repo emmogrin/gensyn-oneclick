@@ -30,17 +30,10 @@ These scripts will:
 
 ---
 
-## 🔧 How to Use
-
-### Step 1: Clone the repo
-
-```bash
-git clone https://github.com/emmogrin/gensyn-oneclick.git
-cd gensyn-oneclick
-```
+## 🔧 How to use
 ---
 
-Step 2: Run the Script
+# Step 1: Clone the repo && Run the Script
 
 🧠 CPU-Only Systems
 ```
