@@ -44,9 +44,27 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
 
+# 🐳 Check and install Docker if not present
+if ! command -v docker &> /dev/null; then
+  echo "🐋 Docker not found! Installing Docker..."
+  curl -fsSL https://get.docker.com | sudo bash
+  sudo usermod -aG docker $USER
+  echo "✅ Docker installed. Please restart your terminal or run 'newgrp docker' to refresh permissions."
+fi
+
+# 🧱 Check and install Docker Compose V2 if not available
+if ! docker compose version &> /dev/null; then
+  echo "🧱 Docker Compose V2 not found! Installing manually..."
+  DOCKER_COMPOSE_VERSION="v2.20.2"
+  mkdir -p ~/.docker/cli-plugins
+  curl -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+  chmod +x ~/.docker/cli-plugins/docker-compose
+  echo "✅ Docker Compose V2 installed!"
+fi
+
 # 🔧 Install docker-buildx if missing
 echo "🔧 Ensuring docker-buildx is available..."
-if ! command -v docker-buildx &> /dev/null && [ ! -f "$HOME/.docker/cli-plugins/docker-buildx" ]; then
+if [ ! -f "$HOME/.docker/cli-plugins/docker-buildx" ]; then
   echo "📦 Installing docker-buildx plugin..."
   mkdir -p ~/.docker/cli-plugins
   curl -sSL https://github.com/docker/buildx/releases/download/v0.12.1/buildx-v0.12.1.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
