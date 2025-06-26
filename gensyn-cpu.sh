@@ -34,12 +34,24 @@ echo "🌐 Installing Node.js 22..."
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 sudo apt install -y nodejs
 node -v
-npm install -g yarn
+
+echo "📦 Fixing yarn install (npm EEXIST)..."
+sudo rm -f /usr/bin/yarn /usr/bin/yarnpkg
+npm install -g yarn --force
 
 echo "🧵 Installing Yarn (alt path)..."
 curl -o- -L https://yarnpkg.com/install.sh | bash
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
+
+# 🔧 Install docker-buildx if missing
+echo "🔧 Ensuring docker-buildx is available..."
+if ! command -v docker-buildx &> /dev/null && [ ! -f "$HOME/.docker/cli-plugins/docker-buildx" ]; then
+  echo "📦 Installing docker-buildx plugin..."
+  mkdir -p ~/.docker/cli-plugins
+  curl -sSL https://github.com/docker/buildx/releases/download/v0.12.1/buildx-v0.12.1.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+  chmod +x ~/.docker/cli-plugins/docker-buildx
+fi
 
 # 🔧 Clone RL-Swarm
 if [ ! -d "rl-swarm" ]; then
