@@ -102,7 +102,7 @@ To reuse it later, mount it in Docker or place it manually in the same directory
 
 Inside the container, logs are stored at:
 ```
-/app/rl-swarm/logs/latest.log
+tail -f /app/rl-swarm/logs/latest.log
 ```
 To check logs:
 
