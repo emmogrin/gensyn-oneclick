@@ -34,12 +34,13 @@ echo "🌐 Installing Node.js 22..."
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo bash -
 sudo apt install -y nodejs
 node -v
-npm install -g yarn
 
-echo "🧵 Installing Yarn (alt path)..."
-curl -o- -L https://yarnpkg.com/install.sh | bash
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-source ~/.bashrc
+echo "⚔️ Removing conflicting Yarn binaries..."
+sudo rm -f /usr/bin/yarn /usr/bin/yarnpkg
+
+echo "🧵 Installing Yarn (safe method)..."
+npm install -g yarn --force
+yarn -v
 
 # 🔧 Clone RL-Swarm
 if [ ! -d "rl-swarm" ]; then
@@ -51,6 +52,14 @@ fi
 
 cd rl-swarm || exit 1
 
-# 🐳 Launch GPU node directly
+# 🛠️ Check docker buildx plugin
+if ! command -v docker-buildx &> /dev/null && [ ! -f "/usr/local/lib/docker/cli-plugins/docker-buildx" ]; then
+  echo "⚠️  docker-buildx plugin is missing. Attempting to install..."
+  mkdir -p ~/.docker/cli-plugins
+  curl -sSL https://github.com/docker/buildx/releases/download/v0.11.2/buildx-v0.11.2.linux-amd64 -o ~/.docker/cli-plugins/docker-buildx
+  chmod +x ~/.docker/cli-plugins/docker-buildx
+fi
+
+# 🐳 Launch GPU node
 echo "⚡ Launching Gensyn GPU container..."
 docker compose run --rm --build -it swarm-gpu
