@@ -44,13 +44,16 @@ Step 2: Run the Script
 
 🧠 CPU-Only Systems
 ```
-
+git clone https://github.com/emmogrin/gensyn-oneclick.git
+cd gensyn-oneclick
 chmod +x gensyn-cpu.sh
 ./gensyn-cpu.sh
 ```
 
 🚀 GPU-Enabled Systems
 ```
+git clone https://github.com/emmogrin/gensyn-oneclick.git
+cd gensyn-oneclick
 chmod +x gensyn-gpu.sh
 ./gensyn-gpu.sh
 ```
