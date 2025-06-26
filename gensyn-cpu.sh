@@ -83,4 +83,4 @@ cd rl-swarm || exit 1
 
 # 🐳 Run container directly
 echo "🚀 Launching Gensyn CPU container..."
-docker compose run --rm --build -it swarm-cpu
+docker compose run --rm --build -it -p 3000:3000 swarm-cpu
