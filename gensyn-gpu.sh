@@ -23,7 +23,7 @@ echo "📦 Updating packages..."
 sudo apt update && sudo apt upgrade -y
 
 echo "🛠 Installing essential tools and dependencies..."
-sudo apt install screen curl iptables build-essential git wget lz4 jq make gcc nano \
+sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano \
 automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev \
 tar clang bsdmainutils ncdu unzip -y
 
@@ -51,6 +51,6 @@ fi
 
 cd rl-swarm || exit 1
 
-# 🐳 Launch GPU node in screen session
-echo "⚡ Launching Gensyn GPU container inside 'swarm-gpu' screen..."
-screen -S swarm-gpu bash -c "docker compose run --rm --build -Pit swarm-gpu"
+# 🐳 Launch GPU node directly
+echo "⚡ Launching Gensyn GPU container..."
+docker compose run --rm --build -Pit swarm-gpu
