@@ -81,9 +81,9 @@ Paste that link in your browser to complete sign-in.
 Answer prompts:
 
 Would you like to upload your trained models to Hugging Face Hub? (y/N)
-👉 Press N to continue on the testnet without uploading.
 
-> Uploading requires at least 2GB upload bandwidth — recommended if you're on a VPS.
+Note: 
+Uploading requires at least 2GB upload bandwidth — recommended if you're on a VPS.
 Press Y to enable uploads, then paste your Hugging Face access token when prompted.
 > 
 Now choose the model you want to use.
