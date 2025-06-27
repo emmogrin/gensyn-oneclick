@@ -27,7 +27,7 @@ These scripts will:
 - **Docker** and **Docker Compose**
 - **Internet connection**
 - **GPU machine (for GPU version only)**
-
+- **Create account on ( `https://dashboard.gensyn.ai/` )
 ---
 
 ## 🔧 How to use
@@ -75,6 +75,11 @@ Paste that link in your browser to complete sign-in.
 
 
 ---
+# Incase of reboot or restart of Pc.
+```
+cd ~/gensyn-oneclick/rl-swarm
+sudo docker compose run --rm --build swarm-cpu
+```
 
 🔐 How swarm.pem is Saved & Reused
 
@@ -90,6 +95,9 @@ Once you log in, Gensyn generates your identity file:
 You can reuse this file on another machine or container by copying it back into the same path before running the node again.
 
 To copy it out of Docker:
+```
+docker ps
+```
 ```
 docker cp <container_id>:/app/rl-swarm/swarm.pem .
 ```
