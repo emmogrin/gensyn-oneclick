@@ -18,6 +18,7 @@ These scripts will:
 - Build & run the Docker container
 - Back up your Gensyn identity (`swarm.pem`)
 - Optional LocalTunnel exposure for VPS users
+  
 
 ---
 
@@ -28,6 +29,7 @@ These scripts will:
 - **Internet connection**
 - **GPU machine (for GPU version only)**
 - **Create account on ( `https://dashboard.gensyn.ai/` )
+- **Create huggingface account ( `https://huggingface.co/` )
 ---
 
 ## 🔧 How to use
@@ -72,7 +74,19 @@ https://loose-cats-tickle.loca.lt
 
 Paste that link in your browser to complete sign-in.
 (your vps ip is your Tunnel password)
+---
 
+After login, your terminal starts installation.
+Answer prompts:
+
+Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] >>> Press N to join testnet
+HuggingFace needs 2GB upload bandwidth for each model you train (Best if your are running on Vps), you can press Y, and enter your access-token.
+Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. >>> For default model, press Enter or choose one of these (More model parameters (B) need more vRAM):
+Gensyn/Qwen2.5-0.5B-Instruct
+Qwen/Qwen3-0.6B
+nvidia/AceInstruct-1.5B
+dnotitia/Smoothie-Qwen3-1.7B
+Gensyn/Qwen2.5-1.5B-Instruct
 
 ---
 # Incase of reboot or restart of Pc.
