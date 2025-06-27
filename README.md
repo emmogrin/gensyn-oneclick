@@ -28,8 +28,8 @@ These scripts will:
 - **Docker** and **Docker Compose**
 - **Internet connection**
 - **GPU machine (for GPU version only)**
-- **Create account on ( `https://dashboard.gensyn.ai/` )
-- **Create huggingface account ( `https://huggingface.co/` )
+- Create account on ( `https://dashboard.gensyn.ai/` )
+- Create huggingface account ( `https://huggingface.co/` )
 ---
 
 ## 🔧 How to use
