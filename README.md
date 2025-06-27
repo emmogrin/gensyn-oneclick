@@ -31,7 +31,28 @@ These scripts will:
 - Create account on ( `https://dashboard.gensyn.ai/` )
 - Create huggingface account ( `https://huggingface.co/` )
 ---
+## CPU&GPU Support 
+You can train on either CPU or GPU, depending on your setup:
 
+🔸 CPU-Only Setup (Advanced)
+Architecture: ARM64 or x86
+Minimum: 32GB RAM
+
+⚠️ Note: Running other apps during training may lead to crashes or instability.
+
+🔹 GPU Setup (Recommended)
+Supported GPUs:
+RTX 3090
+RTX 4090
+RTX 5090
+NVIDIA A100
+NVIDIA H100
+
+Recommended: GPUs with ≥24GB vRAM
+✅ Gensyn also supports GPUs with less than 24GB vRAM
+CUDA Driver: Version 12.6 or higher
+
+---
 ## 🔧 How to use
 ---
 
