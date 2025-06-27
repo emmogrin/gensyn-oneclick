@@ -75,19 +75,29 @@ https://loose-cats-tickle.loca.lt
 Paste that link in your browser to complete sign-in.
 (your vps ip is your Tunnel password)
 ---
+---
+# After login, your terminal starts installation.
 
-After login, your terminal starts installation.
 Answer prompts:
 
-Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N] >>> Press N to join testnet
-HuggingFace needs 2GB upload bandwidth for each model you train (Best if your are running on Vps), you can press Y, and enter your access-token.
-Enter the name of the model you want to use in huggingface repo/name format, or press [Enter] to use the default model. >>> For default model, press Enter or choose one of these (More model parameters (B) need more vRAM):
+Would you like to upload your trained models to Hugging Face Hub? (y/N)
+👉 Press N to continue on the testnet without uploading.
+
+> Uploading requires at least 2GB upload bandwidth — recommended if you're on a VPS.
+Press Y to enable uploads, then paste your Hugging Face access token when prompted.
+> 
+Now choose the model you want to use.
+If you're not using a GPU, it's best to stick with the default model for smoother performance.
+Press Enter to use the default.
+If you are using a GPU, you can try one of the more powerful models below (⚠️ models marked with B need more vRAM):
+
 Gensyn/Qwen2.5-0.5B-Instruct
 Qwen/Qwen3-0.6B
 nvidia/AceInstruct-1.5B
 dnotitia/Smoothie-Qwen3-1.7B
 Gensyn/Qwen2.5-1.5B-Instruct
 
+---
 ---
 # Incase of reboot or restart of Pc.
 ```
