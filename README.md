@@ -132,18 +132,15 @@ To reuse it later, mount it in Docker or place it manually in the same directory
 
 📄 How to Check Logs
 
-Inside the container, logs are stored at:
-```
-tail -f /app/rl-swarm/logs/latest.log
-```
-OR
-
 To check logs:
 ```
 docker ps
 ```
+Then Enter the container id you saw.
+example: sudo docker logs 3f3b2eac7a2d
+
 ```
-sudo docker logs <container_id>
+sudo docker logs <container_id you saw after entering docker ps>
 ```
 You’ll see detailed events like:
 
