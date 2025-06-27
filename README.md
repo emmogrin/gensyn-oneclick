@@ -136,12 +136,15 @@ Inside the container, logs are stored at:
 ```
 tail -f /app/rl-swarm/logs/latest.log
 ```
+OR
+
 To check logs:
-
-docker ps            # get container ID or name
-docker exec -it <container_id_or_name> bash
-cat /app/rl-swarm/logs/latest.log
-
+```
+docker ps
+```
+```
+sudo docker logs <container_id>
+```
 You’ll see detailed events like:
 
 Model loading
@@ -151,7 +154,6 @@ Network peer connections
 Training rounds
 
 Errors (if any)
-
 
 
 ---
