@@ -2,7 +2,7 @@
 
 Simple one-click scripts to run [Gensyn's](https://gensyn.ai) RL-Swarm nodes via Docker — with full support for both **CPU-only** and **GPU** machines.
 
-> ✨ *The Saints bless even the Sybils*  
+> ✨ *The Saint wishes you a happy experience*  
 > 🔱 Follow the path: [@admirkhen](https://twitter.com/admirkhen)
 
 ---
