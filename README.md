@@ -151,6 +151,14 @@ To reuse it later, mount it in Docker or place it manually in the same directory
 
 ---
 
+✅️ To update incase of a new release ✅️
+```
+cd ~/gensyn-oneclick/rl-swarm
+git switch main
+git reset --hard
+git clean -fd
+git pull origin main
+```
 📄 How to Check Logs
 
 To check logs:
