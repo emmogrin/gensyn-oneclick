@@ -6,26 +6,29 @@ echo "║        Powered by @admirkhen         ║"
 echo "╚══════════════════════════════════════╝"
 
 echo ""
-echo "🔧 Installing dependencies..."
-apt update -y && apt install -y curl git jq
+echo "🔧 Installing base dependencies..."
+apt update -y && apt install -y curl git jq wget tar
 
+echo ""
 echo "📦 Installing Go 1.21.5..."
 cd /tmp
-curl -LO https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
+wget -q https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
 rm -rf /usr/local/go
 tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
-export PATH=$PATH:/usr/local/go/bin
-echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.bashrc
+source ~/.bashrc
 
+echo ""
 echo "⚙️ Installing GSwarm CLI..."
-curl -sSfL https://raw.githubusercontent.com/gswarm-labs/cli/main/install.sh | sh
+/usr/local/go/bin/go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 echo ""
 echo "📮 Enter your Telegram Bot Token:"
 read BOT_TOKEN
 
 echo "👤 Fetching your Telegram Chat ID..."
-echo "👉 Now send a message to your bot in Telegram, then press ENTER"
+echo "👉 Send a message to your bot NOW, then press ENTER"
 read
 
 CHAT_JSON=$(curl -s https://api.telegram.org/bot$BOT_TOKEN/getUpdates)
@@ -51,7 +54,7 @@ EOF
 
 echo ""
 echo "✅ Setup complete. Launching GSwarm with Telegram monitor..."
-gswarm start --monitor telegram
+$HOME/go/bin/gswarm start --monitor telegram
 
 echo ""
-echo "📢 Now go back to the Discord and run: /link-telegram"
+echo "📢 Back in Discord, run: /link-telegram to complete setup."
