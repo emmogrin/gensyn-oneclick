@@ -73,7 +73,7 @@ cd gensyn-oneclick
 chmod +x gensyn-gpu.sh
 ./gensyn-gpu.sh
 ```
-
+Or Use this [Manual Experimental Guide](https://github.com/emmogrin/gensyn-oneclick/blob/main/ManualREADME.md)
 ---
 
 🌐 Accessing the Node Dashboard
