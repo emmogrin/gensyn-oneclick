@@ -1,6 +1,6 @@
-## 🐝 Set Up GSwarm Telegram Bot (Manual Guide — VPS/PC Only)
+# 🐝 Set Up GSwarm Telegram Bot (Manual Guide — VPS/PC Only)
 
-# 📌 Purpose: Monitor your Gensyn Swarm node using Telegram, and unlock The Swarm role in Discord.
+## 📌 Purpose: Monitor your Gensyn Swarm node using Telegram, and unlock The Swarm role in Discord.
 
 
 ---
@@ -64,6 +64,8 @@ Send /newbot, choose name + username
 
 Save the bot token it gives you (format: 123456789:ABC...)
 
+[![IMG-20250726-WA0001.jpg](https://i.postimg.cc/63qS0tQY/IMG-20250726-WA0001.jpg)](https://postimg.cc/Q9L0NL1T)
+
 
 2. Send a Message to Your Bot:
 
@@ -72,7 +74,7 @@ Say “hi” to your new bot so it recognizes you( say it 5 times).
 3. Get Your Telegram Chat ID:
 
 Paste this in browser (replace YOUR_TOKEN with your actual token):
-eg: https://api.telegram.org/bot83270137371:AAElazOulSi8yv8pP446euuehs2NWSVpAJS4/getUpdates
+eg: https://apitelegram.org/bot83270137371:AAElazOulSi8yv8pP446euuehs2NWSVpAJS4/getUpdates
 ```
 https://api.telegram.org/botYOUR_TOKEN/getUpdates
 ```
@@ -81,7 +83,9 @@ Look for:
 "chat": {
   "id": 123456789
 }
-That id is your Telegram Chat ID.
+That id is your Telegram Chat ID ( id alone is written before the number)
+
+[![Screenshot-20250726-034311-Chrome.jpg](https://i.postimg.cc/GtJkTs1N/Screenshot-20250726-034311-Chrome.jpg)](https://postimg.cc/T51yZ11q)
 
 
 ---
@@ -100,6 +104,7 @@ Enter your Telegram Chat ID
 
 Paste your EOA wallet address (from Gensyn dashboard)
 
+[![Screenshot-4.png](https://i.postimg.cc/BQHzNhq9/Screenshot-4.png)](https://postimg.cc/8jkwzmJt)
 
 If successful:
 
@@ -123,11 +128,10 @@ screen -r gswarm
 /link-telegram
 ```
 
-2. You’ll get a code. In Telegram, send:
+2. You’ll be giving a code to paste in your Telegram Bot...
+Looks like this:  /verify 4Q478483
 
-/verify YOURCODE
-
-You’ll receive confirmation + be assigned The Swarm role.
+You’ll receive confirmation + be assigned The Swarm role.😁
 
 
 ---
