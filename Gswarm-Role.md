@@ -37,15 +37,17 @@ This opens a screen session named gswarm so your monitor won’t stop even if th
 
 1. Install Go (v1.22.4):
 ```
-sudo rm -rf /usr/local/go
-curl -L https://go.dev/dl/go1.22.4.linux-amd64.tar.gz | sudo tar -xzf - -C /usr/local
+cd /tmp
+wget -q https://go.dev/dl/go1.21.5.linux-amd64.tar.gz
+rm -rf /usr/local/go
+tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz
 echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> ~/.bashrc
 source ~/.bashrc
-go version
 ```
 2. Install GSwarm CLI:
 ```
-go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+/usr/local/go/bin/go install github.com/Deep-Commit/gswarm/cmd/gswarm@latest
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 ```
 3. Confirm Installation:
 ```
